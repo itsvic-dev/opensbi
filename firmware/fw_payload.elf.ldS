@@ -29,4 +29,6 @@ SECTIONS
 	}
 
 	PROVIDE(_fw_reloc_end = .);
+
+	#include "ramfb.ldS"
 }

@@ -1,0 +1,30 @@
+menuconfig QEMU_FW_CFG
+  bool "QEMU fw_cfg Support"
+  depends on FDT
+  default n
+
+if QEMU_FW_CFG
+
+config QEMU_RAMFB
+  bool "QEMU ramfb support"
+  default n
+
+if QEMU_RAMFB
+
+config QEMU_RAMFB_WIDTH
+  int "Framebuffer width"
+  default 800
+
+config QEMU_RAMFB_HEIGHT
+  int "Framebuffer height"
+  default 600
+
+config QEMU_RAMFB_CONSOLE
+  bool "RAMFB console"
+  default n
+  help
+    Uses the graphical framebuffer as the OpenSBI output console.
+
+endif
+
+endif
